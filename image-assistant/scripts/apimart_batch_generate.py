@@ -341,6 +341,27 @@ def _write_run_json(path: Path, obj: dict[str, Any]) -> None:
     path.write_text(json.dumps(obj, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def _get_main_output_dir() -> Path:
+    """
+    检测主工作目录：
+    - 如果当前目录在 .claude/skills 下，往上找到主工作目录
+    - 否则使用当前目录
+    """
+    cwd = Path.cwd().resolve()
+    # 检查是否在 .claude/skills 路径下
+    parts = cwd.parts
+    if '.claude' in parts and 'skills' in parts:
+        # 找到 .claude 的位置，往上一层就是主工作目录
+        try:
+            claude_idx = parts.index('.claude')
+            main_dir = Path(*parts[:claude_idx])
+            return main_dir / "outputs"
+        except (ValueError, IndexError):
+            pass
+    # 默认返回当前目录下的 outputs
+    return Path("outputs")
+
+
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(description="Batch generate images via APIMart.")
     parser.add_argument("--config", type=Path, default=Path("scripts/apimart.env"))
@@ -389,7 +410,8 @@ def main(argv: list[str]) -> int:
 
     if args.out is None:
         stamp = _dt.datetime.now().strftime("%Y%m%d-%H%M%S")
-        out_dir = Path("outputs") / f"apimart-{stamp}"
+        base_output_dir = _get_main_output_dir()
+        out_dir = base_output_dir / f"apimart-{stamp}"
     else:
         out_dir = args.out
 
