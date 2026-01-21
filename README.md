@@ -122,7 +122,7 @@
 如果你使用 Codex 或 Claude Code CLI，直接跟 AI 说：
 
 ```
-安装这个 GitHub 库：https://github.com/你的用户名/云舒的Skills搭子们
+安装这个 GitHub 库：https://github.com/yunshu0909/yunshu_skillshub
 ```
 
 AI 会自动帮你完成安装！
@@ -136,7 +136,7 @@ AI 会自动帮你完成安装！
 cd ~/.claude/skills/
 
 # 克隆本仓库
-git clone https://github.com/你的用户名/云舒的Skills搭子们.git
+git clone https://github.com/yunshu0909/yunshu_skillshub.git
 ```
 
 或者，你也可以单独复制需要的 Skill 到你的 Skills 目录。
