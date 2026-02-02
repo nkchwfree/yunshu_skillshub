@@ -138,6 +138,86 @@
 
 ---
 
+#### 🗺️ [项目目录地图构建器](./project-map-builder) (Project Map Builder)
+**描述**: 为指定目录范围生成或增量更新高信噪比的目录说明文档
+
+**适用场景**:
+- 需要生成项目目录概览
+- 需要代码仓结构说明文档
+- 想要更新已有的 PROJECT_MAP.md
+- 需要理解项目文件夹结构
+
+**核心功能**:
+- 📋 智能范围确认：必须先询问要扫描的文件夹，不默认全仓扫描
+- 🔍 关键文件识别：自动识别入口、配置、服务线程等关键文件
+- 📝 增量更新：已有 PROJECT_MAP.md 时仅做增量更新，不全量重写
+- 🎯 多目录支持：支持单目录或多目录（可合并或分别生成）
+- ⚠️ 明确标注：不确定的地方显式标注"假设"或"未确认"
+
+**触发方式**:
+```
+生成项目地图
+更新 PROJECT_MAP
+给我生成目录说明
+/project-map-builder
+```
+
+---
+
+#### 📅 [版本规划助手](./version-planner) (Version Planner)
+**描述**: 将产品需求拆解成可执行的渐进式版本规划（V0.1 MVP → V1.0）
+
+**适用场景**:
+- 需要拆解产品版本
+- 想要规划 MVP 最小可行产品
+- 需要分阶段实现功能
+- 不确定优先级和开发顺序
+
+**核心功能**:
+- 🎯 价值优先：优先解决用户最痛的点，而非技术最难的点
+- 🚀 快速验证：MVP 设计为 2-3 天能跑通，避免过度设计
+- 📋 明确边界：每个版本明确"做什么"和"不做什么"
+- 🔄 渐进式交付：每个版本都能独立使用，不依赖后续版本
+- ✅ 可测量：每个版本有清晰的验证点和完成标准
+
+**触发方式**:
+```
+拆版本
+版本规划
+MVP怎么做
+分阶段实现
+/version-planner
+```
+
+---
+
+#### ✍️ [写作助手](./writing-assistant) (Writing Assistant)
+**描述**: 根据观点清晰度自动选择最优写作路线，覆盖从思维挖掘到成稿的完整流程
+
+**适用场景**:
+- 想写文章但思路不清晰
+- 需要梳理选题和核心观点
+- 需要组织文章框架和逻辑
+- 从零散想法到完整文章
+
+**核心功能**:
+- 🔍 智能诊断：快速判断观点清晰度，选择最优路线
+- 💭 思维挖掘：观点模糊时，通过引导式对话倒出零散想法
+- 🎯 选题确定：从洞察中提炼核心选题和灵魂句
+- 📐 框架打磨：组织文章逻辑结构，确保表达清晰
+- ✍️ 内容产出：根据框架写成完整文章，保持用户风格
+
+**触发方式**:
+```
+我想写XX
+帮我梳理选题
+怎么形成框架
+给我组织思路
+/writing-assistant
+```
+
+---
+
 ### 🚀 快速开始
 
 #### 安装方式
@@ -185,6 +265,15 @@ git clone https://github.com/yunshu0909/yunshu_skillshub.git
 
 # 使用课程构建器
 /lesson-builder
+
+# 使用项目目录地图构建器
+/project-map-builder
+
+# 使用版本规划助手
+/version-planner
+
+# 使用写作助手
+/writing-assistant
 ```
 
 或者直接在对话中描述你的需求，相关 Skill 会自动触发。
@@ -222,8 +311,16 @@ git clone https://github.com/yunshu0909/yunshu_skillshub.git
 │   ├── SKILL.md               # Skill 定义文件
 │   ├── references/            # 模板和清单
 │   └── scripts/               # 辅助脚本
-└── lesson-builder/             # 课程构建器
-    └── skill.md               # Skill 定义文件
+├── lesson-builder/             # 课程构建器
+│   └── skill.md               # Skill 定义文件
+├── project-map-builder/        # 项目目录地图构建器
+│   └── SKILL.md               # Skill 定义文件
+├── version-planner/            # 版本规划助手
+│   └── SKILL.md               # Skill 定义文件
+└── writing-assistant/          # 写作助手
+    ├── SKILL.md               # Skill 定义文件
+    ├── stages/                # 各阶段详细说明
+    └── templates/             # 模板文件
 ```
 
 ---
@@ -380,6 +477,86 @@ Make teaching materials/prepare course
 
 ---
 
+#### 🗺️ [Project Map Builder](./project-map-builder)
+**Description**: Generate or incrementally update high signal-to-noise directory documentation for specified directories
+
+**Use Cases**:
+- Need to generate project directory overview
+- Need codebase structure documentation
+- Want to update existing PROJECT_MAP.md
+- Need to understand project folder structure
+
+**Core Features**:
+- 📋 Smart Scope Confirmation: Must ask for folders to scan, never defaults to full repository
+- 🔍 Key File Recognition: Automatically identifies entry points, configs, service threads, and other critical files
+- 📝 Incremental Updates: Only does incremental updates when PROJECT_MAP.md exists, never full rewrites
+- 🎯 Multi-directory Support: Supports single or multiple directories (merge or generate separately)
+- ⚠️ Explicit Annotation: Clearly marks uncertain areas as "assumption" or "unconfirmed"
+
+**Trigger**:
+```
+Generate project map
+Update PROJECT_MAP
+Generate directory documentation
+/project-map-builder
+```
+
+---
+
+#### 📅 [Version Planner](./version-planner)
+**Description**: Decompose product requirements into executable progressive version roadmap (V0.1 MVP → V1.0)
+
+**Use Cases**:
+- Need to break down product versions
+- Want to plan MVP (Minimum Viable Product)
+- Need to implement features in stages
+- Uncertain about priorities and development order
+
+**Core Features**:
+- 🎯 Value First: Prioritize solving users' biggest pain points, not the hardest technical challenges
+- 🚀 Quick Validation: MVP designed to work in 2-3 days, avoiding over-engineering
+- 📋 Clear Boundaries: Each version clearly defines "what to do" and "what not to do"
+- 🔄 Progressive Delivery: Each version can be used independently, not dependent on future versions
+- ✅ Measurable: Each version has clear validation points and completion criteria
+
+**Trigger**:
+```
+Break down versions
+Version planning
+How to do MVP
+Implement in stages
+/version-planner
+```
+
+---
+
+#### ✍️ [Writing Assistant](./writing-assistant)
+**Description**: Automatically selects optimal writing route based on viewpoint clarity, covering complete flow from thought mining to final draft
+
+**Use Cases**:
+- Want to write an article but thoughts are unclear
+- Need to organize topic and core viewpoint
+- Need to organize article framework and logic
+- From scattered ideas to complete article
+
+**Core Features**:
+- 🔍 Smart Diagnosis: Quickly assess viewpoint clarity and choose optimal route
+- 💭 Thought Mining: When viewpoint is fuzzy, use guided dialogue to extract scattered ideas
+- 🎯 Topic Selection: Extract core topic and key message from insights
+- 📐 Framework Polishing: Organize article logic structure, ensure clear expression
+- ✍️ Content Production: Write complete article based on framework, maintain user's style
+
+**Trigger**:
+```
+I want to write XX
+Help me organize my topic
+How to form a framework
+Help me organize my thoughts
+/writing-assistant
+```
+
+---
+
 ### 🚀 Quick Start
 
 #### Installation
@@ -427,6 +604,15 @@ In Claude Code CLI, you can use them by:
 
 # Use Lesson Builder
 /lesson-builder
+
+# Use Project Map Builder
+/project-map-builder
+
+# Use Version Planner
+/version-planner
+
+# Use Writing Assistant
+/writing-assistant
 ```
 
 Or simply describe your needs in conversation, and the relevant Skill will trigger automatically.
@@ -464,8 +650,16 @@ Want to learn how to use each Skill? Check out the [Usage Examples](./EXAMPLES.m
 │   ├── SKILL.md               # Skill definition file
 │   ├── references/            # Templates and checklists
 │   └── scripts/               # Helper scripts
-└── lesson-builder/             # Lesson Builder
-    └── skill.md               # Skill definition file
+├── lesson-builder/             # Lesson Builder
+│   └── skill.md               # Skill definition file
+├── project-map-builder/        # Project Map Builder
+│   └── SKILL.md               # Skill definition file
+├── version-planner/            # Version Planner
+│   └── SKILL.md               # Skill definition file
+└── writing-assistant/          # Writing Assistant
+    ├── SKILL.md               # Skill definition file
+    ├── stages/                # Detailed stage descriptions
+    └── templates/             # Template files
 ```
 
 ---
