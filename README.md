@@ -86,6 +86,33 @@
 
 ---
 
+#### 🎨 [新功能设计探索](./design-exploration) (Design Exploration)
+**描述**: 新功能设计探索流程。从模糊想法产出可交付的设计参考文档，作为 PRD 阶段的输入
+
+**适用场景**:
+- 有模糊想法要做新功能/新模块
+- 需要批量探索多种设计方案
+- 需要完整覆盖页面状态（正常/异常/边界）
+- 需要产出设计稿作为开发参考
+
+**核心功能**:
+- 📝 需求收敛：明确做什么、不做什么、边界在哪
+- 🔍 技术调研：了解外部数据约束和技术可行性
+- 🎨 ASCII 批量探索：一次出 5-8 个方案供选择
+- 📐 HTML 设计稿：基于选定方案产出 mockup
+- 📊 全状态覆盖：正常态/加载态/空态/错误态/边界情况
+- 📋 交互规则表：前端开发直接对照实现
+
+**触发方式**:
+```
+我想做个新功能
+帮我设计一下这个模块
+出个设计方案
+/design-exploration
+```
+
+---
+
 #### 🔄 [需求变更工作流](./req-change-workflow) (Requirement Change Workflow)
 **描述**: 标准化需求变更流程，避免改需求时的混乱和代码崩溃
 
@@ -134,6 +161,33 @@
 备课
 做课件/准备课程
 /lesson-builder
+```
+
+---
+
+#### 📦 [需求池管理](./backlog-manager) (Backlog Manager)
+**描述**: 需求池管理。随时抛出想法/痛点，AI 负责追问、整理、合并、归档。准备开新版本时协助筛选。痛点驱动，不做提前排期
+
+**适用场景**:
+- 随时记录产品想法和功能需求
+- 管理零散的需求，避免遗忘
+- 准备新版本时挑选要做什么
+- 整理和清理过时的需求
+
+**核心功能**:
+- 📝 收集：追问痛点、频率、绕过方式，确认理解
+- 📂 归类：检查合并可能，判断状态（可以做了/需要想想/先放着）
+- 🧹 整理：定期清理过时条目，升档想清楚的条目
+- 🎯 筛选：基于频率/可绕过性/ROI 分析候选需求
+- ✅ 归档：标记已完成，更新依赖关系
+
+**触发方式**:
+```
+我想做个功能
+记个需求
+整理一下需求池
+下一个版本做什么
+/backlog-manager
 ```
 
 ---
@@ -367,11 +421,17 @@ git clone https://github.com/yunshu0909/yunshu_skillshub.git
 # 使用 PRD 文档撰写助手
 /prd-doc-writer
 
+# 使用新功能设计探索
+/design-exploration
+
 # 使用需求变更工作流
 /req-change-workflow
 
 # 使用课程构建器
 /lesson-builder
+
+# 使用需求池管理
+/backlog-manager
 
 # 使用项目目录地图构建器
 /project-map-builder
@@ -426,12 +486,17 @@ git clone https://github.com/yunshu0909/yunshu_skillshub.git
 │   ├── SKILL.md               # Skill 定义文件
 │   ├── assets/                # 模板资源
 │   └── references/            # 参考文档和示例
+├── design-exploration/         # 新功能设计探索
+│   ├── SKILL.md               # Skill 定义文件
+│   └── templates/             # 需求总结模板
 ├── req-change-workflow/        # 需求变更工作流
 │   ├── SKILL.md               # Skill 定义文件
 │   ├── references/            # 模板和清单
 │   └── scripts/               # 辅助脚本
 ├── lesson-builder/             # 课程构建器
 │   └── skill.md               # Skill 定义文件
+├── backlog-manager/            # 需求池管理
+│   └── SKILL.md               # Skill 定义文件
 ├── project-map-builder/        # 项目目录地图构建器
 │   └── SKILL.md               # Skill 定义文件
 ├── version-planner/            # 版本规划助手
@@ -552,6 +617,33 @@ Organize requirement document
 
 ---
 
+#### 🎨 [Design Exploration](./design-exploration)
+**Description**: New feature design exploration workflow. From fuzzy ideas to deliverable design reference documents as input for the PRD phase
+
+**Use Cases**:
+- Have a fuzzy idea for a new feature/module
+- Need to batch explore multiple design options
+- Need complete coverage of page states (normal/exception/boundary)
+- Need to produce design mockups as development reference
+
+**Core Features**:
+- 📝 Requirement Convergence: Define what to do, what not to do, and boundaries
+- 🔍 Technical Research: Understand external data constraints and technical feasibility
+- 🎨 ASCII Batch Exploration: Generate 5-8 options at once for selection
+- 📐 HTML Mockups: Produce mockups based on selected option
+- 📊 Full State Coverage: Normal/loading/empty/error/boundary states
+- 📋 Interaction Rule Table: Frontend development reference
+
+**Trigger**:
+```
+I want to build a new feature
+Help me design this module
+Create a design proposal
+/design-exploration
+```
+
+---
+
 #### 🔄 [Requirement Change Workflow](./req-change-workflow)
 **Description**: Standardize the requirement change process to avoid chaos and code breakage when modifying requirements
 
@@ -600,6 +692,33 @@ Adjust interaction/change feature
 Prepare lesson
 Make teaching materials/prepare course
 /lesson-builder
+```
+
+---
+
+#### 📦 [Backlog Manager](./backlog-manager)
+**Description**: Backlog management. Throw in ideas/pain points anytime, AI handles追问, organizing, merging, and archiving. Assists with selection when starting a new version. Pain-driven, no premature scheduling
+
+**Use Cases**:
+- Record product ideas and feature needs anytime
+- Manage scattered requirements to avoid forgetting
+- Select what to do when preparing a new version
+- Organize and clean up outdated requirements
+
+**Core Features**:
+- 📝 Collection: Ask about pain points, frequency, workarounds to confirm understanding
+- 📂 Categorization: Check merge possibilities, judge status (ready to do/needs thinking/on hold)
+- 🧹 Organization: Regularly clean outdated items, upgrade well-thought-out items
+- 🎯 Selection: Analyze candidates based on frequency/workaround feasibility/ROI
+- ✅ Archiving: Mark completed, update dependencies
+
+**Trigger**:
+```
+I want to build a feature
+Record a requirement
+Organize the backlog
+What to do in next version
+/backlog-manager
 ```
 
 ---
@@ -833,11 +952,17 @@ In Claude Code CLI, you can use them by:
 # Use PRD Doc Writer
 /prd-doc-writer
 
+# Use Design Exploration
+/design-exploration
+
 # Use Requirement Change Workflow
 /req-change-workflow
 
 # Use Lesson Builder
 /lesson-builder
+
+# Use Backlog Manager
+/backlog-manager
 
 # Use Project Map Builder
 /project-map-builder
@@ -892,20 +1017,25 @@ Want to learn how to use each Skill? Check out the [Usage Examples](./EXAMPLES.m
 │   ├── SKILL.md               # Skill definition file
 │   ├── assets/                # Template resources
 │   └── references/            # Reference docs and examples
+├── design-exploration/         # Design Exploration
+│   ├── SKILL.md               # Skill definition file
+│   └── templates/             # Requirements summary template
 ├── req-change-workflow/        # Requirement Change Workflow
 │   ├── SKILL.md               # Skill definition file
 │   ├── references/            # Templates and checklists
 │   └── scripts/               # Helper scripts
 ├── lesson-builder/             # Lesson Builder
 │   └── skill.md               # Skill definition file
+├── backlog-manager/            # Backlog Manager
+│   └── SKILL.md               # Skill definition file
 ├── project-map-builder/        # Project Map Builder
 │   └── SKILL.md               # Skill definition file
 ├── version-planner/            # Version Planner
 │   └── SKILL.md               # Skill definition file
-└── writing-assistant/          # Writing Assistant
-    ├── SKILL.md               # Skill definition file
-    ├── stages/                # Detailed stage descriptions
-    └── templates/             # Template files
+├── writing-assistant/          # Writing Assistant
+│   ├── SKILL.md               # Skill definition file
+│   ├── stages/                # Detailed stage descriptions
+│   └── templates/             # Template files
 ├── weekly-report/             # Weekly Report
 │   └── SKILL.md              # Skill definition file
 ├── priority-judge/            # Priority Judge
