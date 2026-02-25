@@ -379,6 +379,33 @@ MVP怎么做
 
 ---
 
+#### 🔍 [GitHub 开源项目搜索助手](./github-repo-search) (GitHub Repo Search)
+**描述**: 帮助用户搜索和筛选 GitHub 开源项目，输出结构化推荐报告
+
+**适用场景**:
+- 想找某个方向的开源项目
+- 需要对比多个同类项目
+- 想了解技术栈选型方案
+- 寻找可直接使用或二次开发的工具
+
+**核心功能**:
+- 📝 需求收敛：确认主题、数量、排序模式、目标形态
+- 🔍 检索词拆解：5-10 组 query，覆盖同义词、场景词、技术词
+- 🏷️ 仓库分类：框架层/应用层/记忆层/MCP层/目录清单层/垂直场景层/方法论层
+- 📊 质量精炼：综合权重排序（相关性/场景适用性/活跃度/工程成熟度）
+- 📋 结构化报告：可理解、可比较、可决策、可直接行动的候选仓库列表
+
+**触发方式**:
+```
+帮我找开源项目
+搜一下GitHub上有什么
+找找XX方向的仓库
+开源项目推荐
+/github-search
+```
+
+---
+
 ### 🚀 快速开始
 
 #### 安装方式
@@ -453,6 +480,9 @@ git clone https://github.com/yunshu0909/yunshu_skillshub.git
 
 # 使用 UI 样式修改助手
 /ui-design
+
+# 使用 GitHub 开源项目搜索助手
+/github-search
 ```
 
 或者直接在对话中描述你的需求，相关 Skill 会自动触发。
@@ -511,7 +541,9 @@ git clone https://github.com/yunshu0909/yunshu_skillshub.git
 │   └── skill.md              # Skill 定义文件
 ├── thinking-partner/          # 思考拍档
 │   └── SKILL.md              # Skill 定义文件
-└── ui-design/                 # UI 样式修改助手
+├── ui-design/                 # UI 样式修改助手
+│   └── SKILL.md              # Skill 定义文件
+└── github-repo-search/        # GitHub 开源项目搜索助手
     └── SKILL.md              # Skill 定义文件
 ```
 
@@ -910,6 +942,33 @@ The spacing is not quite right
 
 ---
 
+#### 🔍 [GitHub Repo Search](./github-repo-search)
+**Description**: Help users search and filter GitHub open source projects, output structured recommendation reports
+
+**Use Cases**:
+- Looking for open source projects in a specific direction
+- Need to compare multiple similar projects
+- Want to understand technology stack selection options
+- Looking for tools ready to use or for secondary development
+
+**Core Features**:
+- 📝 Requirement Convergence: Confirm topic, quantity, sorting mode, target form
+- 🔍 Query Breakdown: 5-10 query groups covering synonyms, scenario words, technical terms
+- 🏷️ Repository Classification: Framework/Application/Memory/MCP/Catalog/Vertical/Methodology layers
+- 📊 Quality Refinement: Comprehensive weighted ranking (relevance/applicability/activity/maturity)
+- 📋 Structured Report: Understandable, comparable, decision-ready, actionable candidate repository list
+
+**Trigger**:
+```
+Help me find open source projects
+Search GitHub for XX
+Looking for repositories in XX direction
+Open source project recommendations
+/github-search
+```
+
+---
+
 ### 🚀 Quick Start
 
 #### Installation
@@ -984,6 +1043,9 @@ In Claude Code CLI, you can use them by:
 
 # Use UI Design Assistant
 /ui-design
+
+# Use GitHub Repo Search
+/github-search
 ```
 
 Or simply describe your needs in conversation, and the relevant Skill will trigger automatically.
@@ -1042,7 +1104,9 @@ Want to learn how to use each Skill? Check out the [Usage Examples](./EXAMPLES.m
 │   └── skill.md              # Skill definition file
 ├── thinking-partner/          # Thinking Partner
 │   └── SKILL.md              # Skill definition file
-└── ui-design/                 # UI Design Assistant
+├── ui-design/                 # UI Design Assistant
+│   └── SKILL.md              # Skill definition file
+└── github-repo-search/        # GitHub Repo Search
     └── SKILL.md              # Skill definition file
 ```
 
